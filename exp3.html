@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart App</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css2.css">
+  <title> shopping cart </title>
+</head>
+<body>
+  <header class = "bg-dark text-white text-center py-3">
+<h1> Shopping Cart</h1>
+<nav>
+<ul class="nav justify-content-center">
+<li class="nav-item"><a class="nav-link" href="#catalog">catalog</a></li>
+<li class="nav-item"><a class="nav-link" href="#cart">cart</a></li>
+<li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
+<li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Registration Form -->
+<form onsubmit="return validateRegistration()" class="needs-validation" 
+novalidate>
+<label for="username" >username</label>
+<input type="text"><br>
+<label for="password">password</label>
+<input type="password">
+<button type="submit" class="btn btn-primary">Register</button>
+</form><br><br>
+<!-- Login Form -->
+<form onsubmit="return validateLogin()" class="needs-validation" novalidate>
+    <label for="username" >username</label>
+    <input type="text"><br>
+    <label for="password">password</label>
+    <input type="password">
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+<main class="container mt-3" id="content">
+<!--Bootstrap is captional for certain features -->
+<script src="exp1js.js">
+
+// Function to validate registration form
+function validateRegistration() {
+const username = document.getElementById('username').value;
+const password = document.getElementById('password').value;
+if (username.trim() === '' || password.trim() === '') {
+alert('Please enter both username and password.');
+return false;
+}
+
+// Additional validation logic can be added as needed
+return true;
+}
+// Function to validate login form
+function validateLogin() {
+const username = document.getElementById('loginUsername').value;
+const password = document.getElementById('loginPassword').value;
+if (username.trim() === '' || password.trim() === '') {
+alert('Please enter both username and password.');
+return false;
+}
+// Additional validation logic can be added as needed
+return true;
+}
+</script>
+</body>
+</html>
